@@ -1,0 +1,52 @@
+# ReviewGate: Enterprise Human-in-the-Loop (HITL) AI Automation Gateway
+
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Slack API](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
+
+## 📌 Executive Summary
+**ReviewGate** is a custom integration architecture designed to bridge the gap between autonomous AI agents—specifically **Anthropic's Claude**—and secure business operations. It utilizes the newly released Model Context Protocol (MCP) to allow Claude to draft operational actions, which are then routed to a secure Slack gateway for human approval before execution.
+
+This ensures businesses can leverage the advanced reasoning and speed of Claude while maintaining absolute zero-trust control over client communications, CRM updates, and physical fulfillment.
+
+## 🚀 Core Architecture
+
+1. **The AI Brain (Claude via MCP):** Claude acts as the autonomous reasoning engine. It processes natural language prompts, interacts with local context, and formats operational execution requests (e.g., drafting emails, structuring CRM updates).
+2. **The Security Database (Supabase):** Acts as the immutable ledger. All actions proposed by Claude are safely caged here in a `pending` state.
+3. **The Human Gateway (Slack Bolt API):** Listens for new database entries and pushes interactive approval cards to a dedicated Slack channel. 
+4. **The Execution Layer:** Upon clicking "Approve" in Slack, the system triggers live API calls (e.g., Google OAuth 2.0 for Gmail) or fires webhooks out to orchestration platforms like n8n or Make for complex routing.
+
+## 🏗️ System Design & Technical Highlights
+
+This system is built for high scalability, asynchronous execution, and enterprise security.
+
+* **Event-Driven WebSockets:** Utilizes Supabase Realtime (Postgres WAL) to push database mutations to the Slack Bolt app in milliseconds, ensuring zero UI latency.
+* **OAuth 2.0 Implementation:** Features a custom, hardcoded Google APIs adapter with secure token generation, offline access routing, and dynamic client instantiation for interacting natively with the Gmail API.
+* **Decoupled Execution:** Highly sensitive actions are executed natively via backend TypeScript adapters, while peripheral actions are structured as JSON payloads and dispatched via HTTP webhooks to external orchestration tools.
+* **Robust Error Handling:** Implements lazy initialization for file system reads and strict payload validation to prevent Node.js thread crashes on missing database IDs or network failures.
+
+## 🛠️ Features
+
+* **Zero-Rogue AI:** Claude physically cannot send an email or alter a CRM without a human clicking "Approve" in Slack.
+* **Live OAuth 2.0 Gmail Integration:** Drafts emails directly into a live inbox and executes sending natively via Google APIs.
+* **Webhook Extensibility:** Easily routes approved JSON payloads to external workflow builders to trigger actions in HubSpot, ShipStation, GoHighLevel, or other platforms.
+* **Real-time Synchronization:** Utilizes Supabase Realtime to push approval cards to Slack milliseconds after Claude proposes them.
+
+## 💻 Local Development Setup
+
+### Prerequisites
+* Node.js (v18+)
+* A Supabase Project
+* A Slack App (with Socket Mode enabled)
+* Google Cloud Console Project (with Gmail API enabled)
+* Claude Desktop (for the MCP Client)
+
+## 2. Install Dependencies
+### Clone the repository
+git clone [https://github.com/your-username/reviewgate.git](https://github.com/your-username/reviewgate.git)
+cd reviewgate
+
+### Install required packages
+npm install

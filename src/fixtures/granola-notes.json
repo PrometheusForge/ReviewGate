@@ -1,0 +1,76 @@
+{
+  "notes": [
+    {
+      "id": "gn-1001",
+      "title": "Discovery Call - Apex Solar Integrations",
+      "owner": {
+        "name": "Gateway Admin",
+        "email": "admin@reviewgate.local"
+      },
+      "summary": "Met with David from Apex Solar. They are currently losing track of commercial inbound leads because their custom funnels aren't syncing to HubSpot. They want an automated pipeline that routes new leads, drafts a response, but requires their sales manager to approve it before sending. High intent. Deal size likely $15k+.",
+      "transcript": [
+        { "speaker": { "source": "microphone" }, "text": "Thanks for jumping on, David. Walk me through where the current funnel is breaking down." },
+        { "speaker": { "source": "speaker" }, "text": "Right now, leads come in from our landing pages, but the handoff to the CRM is manual. If the sales manager is on site, leads sit for 24 hours." },
+        { "speaker": { "source": "microphone" }, "text": "Got it. If we route those directly into HubSpot and have the AI stage a localized email draft for your manager to just click 'approve' in Slack, does that solve the bottleneck?" },
+        { "speaker": { "source": "speaker" }, "text": "Exactly what we need. Send over the proposal." }
+      ]
+    },
+    {
+      "id": "gn-1002",
+      "title": "Pipeline Review - Titan Commercial Roofing",
+      "owner": {
+        "name": "Gateway Admin",
+        "email": "admin@reviewgate.local"
+      },
+      "summary": "Follow-up with Elena at Titan Roofing. They loved the initial AI command center demo but have compliance concerns about the AI sending quotes automatically. Reassured her that ReviewGate architecture forces a hard human checkpoint. She wants to see a demo of the Slack approval card specifically.",
+      "transcript": [
+        { "speaker": { "source": "microphone" }, "text": "Elena, good to reconnect. What did the team think of the command center demo?" },
+        { "speaker": { "source": "speaker" }, "text": "They liked the speed, but our estimators are terrified of the AI auto-sending a bad quote for a $100k roof." },
+        { "speaker": { "source": "microphone" }, "text": "I completely understand. The system we build uses an approval gateway. The AI only drafts the quote and posts it to a Slack channel. Nothing leaves your system until an estimator clicks Approve." },
+        { "speaker": { "source": "speaker" }, "text": "That changes everything. Can you show me how that Slack card looks on our next call?" }
+      ]
+    },
+    {
+      "id": "gn-1003",
+      "title": "Onboarding Kickoff - Terra Landscaping Franchises",
+      "owner": {
+        "name": "Gateway Admin",
+        "email": "admin@reviewgate.local"
+      },
+      "summary": "Kickoff with Marcus for the Terra Landscaping rollout. We are integrating their Zapier workflows into the new custom Notion workspace we built. They need to ensure that when a new franchisee signs up, the client portal is generated automatically. Waiting on them to provide API keys.",
+      "transcript": [
+        { "speaker": { "source": "speaker" }, "text": "So when a new franchise signs the master agreement, how long does it take for their dashboard to spin up?" },
+        { "speaker": { "source": "microphone" }, "text": "It will be instant. The workflow will catch the signed agreement, ping the Notion API to duplicate the portal template, and map their specific data into the databases." },
+        { "speaker": { "source": "speaker" }, "text": "Brilliant. I'll get you the API access tokens by Friday so we can test it." }
+      ]
+    },
+    {
+      "id": "gn-1004",
+      "title": "Check-in - SunPeak Energy",
+      "owner": {
+        "name": "Gateway Admin",
+        "email": "admin@reviewgate.local"
+      },
+      "summary": "Brief check-in with the SunPeak team (Sarah, sarah@sunpeak.example.com, and Mike). The current sequence drafting is working well, but they want to trigger physical sample kit shipments when a deal hits the 'Evaluation' stage. Discussed adding a ShipStation integration to the gateway.",
+      "transcript": [
+        { "speaker": { "source": "speaker" }, "text": "The email drafting is saving us hours. Next question: can we automate sending the physical solar panel sample kits?" },
+        { "speaker": { "source": "microphone" }, "text": "Yes, we can write an adapter for ShipStation. When you move the deal stage in HubSpot, the AI will draft the shipping order, you approve it in Slack, and ShipStation prints the label." }
+      ]
+    },
+    {
+      "id": "gn-1005",
+      "title": "Cold Outbound - Elite HVAC Systems",
+      "owner": {
+        "name": "Gateway Admin",
+        "email": "admin@reviewgate.local"
+      },
+      "summary": "Initial cold call with Elite HVAC. They use a very outdated CRM and are hesitant about AI. They weren't ready for a full build but agreed to let me run a free audit on their current lead response times. Follow up next month.",
+      "transcript": [
+        { "speaker": { "source": "microphone" }, "text": "I noticed you are running heavy local ads but your response time on the contact form is a bit delayed. Have you looked into AI routing?" },
+        { "speaker": { "source": "speaker" }, "text": "We are old school here. We don't trust bots talking to our customers." },
+        { "speaker": { "source": "microphone" }, "text": "That's why we build 'assist, don't auto-send' systems. But I understand the hesitation. Mind if I just run an audit on the response times and send it over next month?" },
+        { "speaker": { "source": "speaker" }, "text": "Sure, send it over. I'll take a look." }
+      ]
+    }
+  ]
+}

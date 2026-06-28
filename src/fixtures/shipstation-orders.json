@@ -1,0 +1,52 @@
+{
+  "orders": [
+    {
+      "orderId": "ss-9901",
+      "orderNumber": "ORD-1045",
+      "orderStatus": "awaiting_shipment",
+      "customer": {
+        "email": "david@apexsolar.example.com",
+        "company": "Apex Solar Solutions"
+      },
+      "items": [
+        {
+          "sku": "KIT-SOLAR-01",
+          "name": "Commercial Solar Panel Swatch Kit",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "orderId": "ss-9902",
+      "orderNumber": "ORD-1046",
+      "orderStatus": "shipped",
+      "customer": {
+        "email": "elena@titanroofing.example.com",
+        "company": "Titan Commercial Roofing"
+      },
+      "items": [
+        {
+          "sku": "BROCH-AI-01",
+          "name": "AI RevOps Implementation Guide (Print)",
+          "quantity": 5
+        }
+      ]
+    },
+    {
+      "orderId": "ss-9903",
+      "orderNumber": "ORD-1047",
+      "orderStatus": "awaiting_shipment",
+      "customer": {
+        "email": "sarah@sunpeak.example.com",
+        "company": "SunPeak Energy"
+      },
+      "items": [
+        {
+          "sku": "KIT-ROOF-03",
+          "name": "Standard Material Sample Box",
+          "quantity": 2
+        }
+      ]
+    }
+  ]
+}
