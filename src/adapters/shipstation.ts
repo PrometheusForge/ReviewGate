@@ -5,7 +5,6 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Your existing schema
 export const OrderSchema = z.object({
   orderId: z.string(),
   orderNumber: z.string(),
@@ -21,9 +20,7 @@ export const OrderSchema = z.object({
   }))
 });
 
-// The new function that Claude will call to draft an order
 export async function draftSampleKitOrder(email: string, company: string, sku: string) {
-  // We simulate checking the catalog/history, then generate the draft payload
   const draft = {
     action: "create_order",
     customer: { email, company },
