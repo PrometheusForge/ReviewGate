@@ -12,7 +12,13 @@
 This ensures businesses can leverage the advanced reasoning and speed of Claude while maintaining absolute zero-trust control over client communications, calendar scheduling, CRM updates, and physical fulfillment.
 
 <img width="725" height="942" alt="Screenshot 2026-08-02 134958" src="https://github.com/user-attachments/assets/590fa08c-e4d3-491e-a83e-ef52660ccaee" />
+
+<img width="1676" height="642" alt="Screenshot 2026-06-26 134610" src="https://github.com/user-attachments/assets/4327d84b-57dd-4da3-b6cc-51059775c953" />
+
+<img width="1805" height="688" alt="Screenshot 2026-06-28 055230" src="https://github.com/user-attachments/assets/4ccab14a-baea-4ffc-aaa3-f37b5eb51230" />
+
 <img width="1046" height="557" alt="Screenshot 2026-06-28 181342" src="https://github.com/user-attachments/assets/fbe87d36-bac9-4228-aff4-940478d49f5b" />
+
 <img width="707" height="946" alt="Screenshot 2026-08-02 134550" src="https://github.com/user-attachments/assets/41eb3021-69b3-4cc2-b2a1-fc081addbea0" />
 
 ## Core Architecture
