@@ -14,14 +14,15 @@ This ensures businesses can leverage the advanced reasoning and speed of Claude 
 <img width="725" height="942" alt="Screenshot 2026-08-02 134958" src="https://github.com/user-attachments/assets/590fa08c-e4d3-491e-a83e-ef52660ccaee" />
 <img width="1046" height="557" alt="Screenshot 2026-06-28 181342" src="https://github.com/user-attachments/assets/fbe87d36-bac9-4228-aff4-940478d49f5b" />
 <img width="707" height="946" alt="Screenshot 2026-08-02 134550" src="https://github.com/user-attachments/assets/41eb3021-69b3-4cc2-b2a1-fc081addbea0" />
-## 🚀 Core Architecture
+
+## Core Architecture
 
 1. **The AI Brain (Claude via MCP):** Claude acts as the autonomous reasoning engine. It processes natural language prompts, interacts with local context, and formats operational execution requests (e.g., drafting emails, proposing meetings, structuring CRM updates).
 2. **The Security Database (Supabase):** Acts as the immutable ledger. All actions proposed by Claude are safely caged here in a `pending` state.
 3. **The Human Gateway (Slack Bolt API):** Listens for new database entries and pushes interactive approval cards to a dedicated Slack channel. 
 4. **The Execution Layer:** Upon clicking "Approve" in Slack, the system triggers live API calls (e.g., Google OAuth 2.0 for Gmail and Calendar) or fires webhooks out to orchestration platforms like n8n or Make for complex routing.
 
-## 🏗️ System Design & Technical Highlights
+## System Design & Technical Highlights
 
 This system is built for high scalability, asynchronous execution, and enterprise security.
 
@@ -30,7 +31,7 @@ This system is built for high scalability, asynchronous execution, and enterpris
 * **Decoupled Execution:** Highly sensitive actions are executed natively via backend TypeScript adapters, while peripheral actions are structured as JSON payloads and dispatched via HTTP webhooks to external orchestration tools.
 * **Robust Error Handling:** Implements lazy initialization for file system reads and strict payload validation to prevent Node.js thread crashes on missing database IDs or network failures.
 
-## 🛠️ Features
+## Features
 
 * **Zero-Rogue AI:** Claude physically cannot send an email, book a meeting, or alter a CRM without a human clicking "Approve" in Slack.
 * **Live OAuth 2.0 Gmail Integration:** Drafts emails directly into a live inbox and executes sending natively via Google APIs.
@@ -38,7 +39,7 @@ This system is built for high scalability, asynchronous execution, and enterpris
 * **Webhook Extensibility:** Easily routes approved JSON payloads to external workflow builders to trigger actions in HubSpot, ShipStation, GoHighLevel, or other platforms.
 * **Real-time Synchronization:** Utilizes Supabase Realtime to push approval cards to Slack milliseconds after Claude proposes them.
 
-## 💻 Local Development Setup
+## Local Development Setup
 
 ### Prerequisites
 * Node.js (v18+)
