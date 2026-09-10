@@ -7,7 +7,7 @@
 ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 
 ## 📌 Executive Summary
-**ReviewGate** is a custom integration architecture designed to bridge the gap between autonomous AI agents—specifically **Anthropic's Claude**—and secure business operations. It utilizes the newly released Model Context Protocol (MCP) to allow Claude to draft operational actions, which are then routed to a secure Slack gateway for human approval before execution.
+**ReviewGate** is a custom integration architecture designed to bridge the gap between autonomous AI agents (**Anthropic's Claude**) and secure business operations. It utilizes the newly released Model Context Protocol (MCP) to allow Claude to draft operational actions, which are then routed to a secure Slack gateway for human approval before execution.
 
 This ensures businesses can leverage the advanced reasoning and speed of Claude while maintaining absolute zero-trust control over client communications, calendar scheduling, CRM updates, and physical fulfillment.
 
